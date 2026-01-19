@@ -12,8 +12,7 @@ The focus of the project is not automation alone, but understanding how networki
 - SSH access restricted to authenticated devices
 
 ### Nodes
-- **pi-control**  
-  Acts as the control node and primary entry point.
+- **pi-control** (Acts as the control node and primary entry point.)
 - **pi-worker1**
 - **pi-worker2**
 
