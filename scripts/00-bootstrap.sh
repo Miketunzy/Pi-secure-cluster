@@ -302,7 +302,7 @@ EOF
 
   # Reload, don’t restart, to reduce the chance of dropping active sessions
   log "Reloading sshd"
-  systemctl reload sshd
+  systemctl reload ssh
 }
 
 verify_sshd_effective_config() {
