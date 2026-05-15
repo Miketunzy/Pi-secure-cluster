@@ -1,0 +1,16 @@
+---
+- name:  Ensure essential packages are installed
+  hosts: cluster
+  become: true
+
+  tasks: 
+    - name: Install essential packages
+      apt:
+        name:
+           - curl
+           - git
+           - ufw
+           - fail2ban
+           - jq
+        state: present
+        update_cache: yes
