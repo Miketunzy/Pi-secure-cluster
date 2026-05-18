@@ -1,16 +1,24 @@
 ---
-- name:  Ensure essential packages are installed
-  hosts: cluster
-  become: true
+    - name: Ensure essential packages are installed
+      hosts: cluster
+      become: true
+      vars:
+        baseline_packages:
+          - curl
+          - git
+          - ufw
+          - fail2ban
+          - jq
+          - tzdata
+        baseline_timezone: "America/Chicago"
 
-  tasks: 
-    - name: Install essential packages
-      apt:
-        name:
-           - curl
-           - git
-           - ufw
-           - fail2ban
-           - jq
-        state: present
-        update_cache: yes
+      tasks: 
+        - name: Install essential packages
+          apt:
+            name: "{{ baseline_packages }}"
+            state: present
+            update_cache: yes
+
+        - name: Set timezone
+          timezone:
+             name: "{{ baseline_timezone }}"
