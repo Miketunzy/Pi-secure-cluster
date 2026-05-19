@@ -22,3 +22,17 @@
         - name: Set timezone
           timezone:
              name: "{{ baseline_timezone }}"
+        - name: Deploy sshd listen address config
+          copy:
+            src: ../files/10-listen-tailscale.conf
+            dest: /etc/ssh/sshd_config.d/10-listen-tailscale.conf
+            owner: root
+            group: root
+            mode: '0644'
+          notify: Restart sshd
+
+      handlers:
+        - name: Restart sshd
+          service:
+            name: ssh
+            state: restarted
