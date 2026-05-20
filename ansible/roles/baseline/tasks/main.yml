@@ -1,0 +1,20 @@
+---
+- name: Install essential package
+  apt:
+    name: "{{ baseline_packages }}"
+    state: present
+    update_cache: yes
+
+- name: Set timezone
+  timezone: 
+    name: "{{ baseline_timezone }}"
+
+- name: Deploy sshd listen address config
+  copy: 
+    src: 10-listen-tailscale.conf
+    dest: /etc/ssh/sshd_config.d/10-listen-tailscale.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart sshd
+

@@ -1,0 +1,9 @@
+---
+baseline_packages:
+  - curl
+  - git
+  - ufw
+  - fail2ban
+  - jq
+  - tzdata
+baseline_timezone: "America/Chicago"

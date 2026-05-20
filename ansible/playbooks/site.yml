@@ -1,0 +1,6 @@
+---
+- name: Apply baseline configuration to all nodes
+  hosts: cluster
+  become: true
+  roles:
+    - baseline
