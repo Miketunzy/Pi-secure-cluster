@@ -1,0 +1,11 @@
+---
+docker_packages:
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+
+docker_user: mike-1
+docker_gpg_url: "https://download.docker.com/linux/ubuntu/gpg"
+docker_repo_url: "https://download.docker.com/linux/ubuntu"
