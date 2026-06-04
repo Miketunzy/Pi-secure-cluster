@@ -27,8 +27,13 @@ jobs:
           context: docker/nginx-demo
           push: true
           tags: miketunzy/pi-cluster-nginx:latest
-
-      - name: Deploy to pi-control
+      
+      - name: Connect to Tailscale
+        uses: tailscale/github-actions@v2
+        with:
+          authkey: ${{ secrets.TAILSCALE_AUTHKEY }}
+    
+     - name: Deploy to pi-control
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.PI_CONTROL_HOST }}
