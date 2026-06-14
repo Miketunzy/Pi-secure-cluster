@@ -1,0 +1,12 @@
+---
+- name: Apply baseline configuration to monitoring node
+  hosts: monitoring
+  become: true
+  roles:
+    - baseline
+
+- name: Install and configure Docker on monitoring node
+  hosts: monitoring
+  become: true
+  roles:
+    - docker
