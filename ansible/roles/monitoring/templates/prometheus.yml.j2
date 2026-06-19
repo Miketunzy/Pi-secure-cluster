@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+
+scrap_configs:
+  - job_name: 'node'
+    static_configs:
+      - targets:
+          - '100.98.178.9:9100'
+          - '100.95.239.78:9100'
+          - '100.97.159.117:9100'

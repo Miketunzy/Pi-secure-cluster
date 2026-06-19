@@ -1,0 +1,7 @@
+prometheus_image: prom/prometheus:latest
+prometheus_container_name: prometheus
+prometheus_port: 9090
+
+grafana_image: grafana/grafana:latest
+grafana_container_name: grafana
+grafana_port: 3000

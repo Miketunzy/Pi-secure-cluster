@@ -3,7 +3,7 @@ pi-control ansible_host=100.98.178.9 ansible_connection=local
 
 [workers]
 pi-worker1 ansible_host=100.95.239.78
-pi-worker2 ansible_host=100.97.159.117
+pi-worker2 ansible_host=100.81.104.62
 
 [monitoring]
 pi-monitor ansible_host=100.73.163.10

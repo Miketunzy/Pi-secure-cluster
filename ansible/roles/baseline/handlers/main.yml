@@ -1,5 +1,4 @@
 ---
 - name: Restart sshd
-  service: 
-    name: ssh
-    state: restarted
+  shell: pkill sshd; sleep 1; /usr/sbin/sshd
+  become: yes
